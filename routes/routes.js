@@ -52,7 +52,7 @@ router.post('/register', async (req, res) => {
         res.cookie("jwt", token, {
               secure: true, 
              sameSite: 'None', 
-            httpOnly: true,
+            httpOnly: false,
             maxAge: 24 * 60 * 60 * 1000 // 1 day
         });
 
@@ -81,7 +81,7 @@ router.post('/login',async (req, res) => {
         res.cookie("jwt", token, {
               secure: true, 
             sameSite: 'None', 
-            httpOnly: true,
+            httpOnly: false,
             maxAge:  24 * 60 * 60 * 1000 // 1 day
         });
         
