@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.use(routes);
 
 const corsOptions = {
-  origin: 'http://localhost:4200', 'https://task-canvas-frontend1.vercel.app/'// Allow requests from this origin
+  origin: ['http://localhost:4200', 'https://task-canvas-frontend1.vercel.app/'],// Allow requests from this origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow these HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allow these headers
   credentials: true // Allow credentials (cookies, authorization headers, etc.)
