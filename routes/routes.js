@@ -50,7 +50,8 @@ router.post('/register', async (req, res) => {
 
         const token = jwt.sign({ _id }, process.env.SECRET_KEY);
         res.cookie("jwt", token, {
-            secure: process.env.NODE_ENV === 'production', 
+              secure: true, 
+             sameSite: 'None', 
             httpOnly: true,
             maxAge: 24 * 60 * 60 * 1000 // 1 day
         });
@@ -78,7 +79,8 @@ router.post('/login',async (req, res) => {
 
         const token = jwt.sign({ _id: user._id }, process.env.SECRET_KEY);
         res.cookie("jwt", token, {
-            secure: process.env.NODE_ENV === 'production', 
+              secure: true, 
+            sameSite: 'None', 
             httpOnly: true,
             maxAge:  24 * 60 * 60 * 1000 // 1 day
         });
